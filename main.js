@@ -16,10 +16,10 @@ var switchedOn = false,
         3: 'bottomLeftYellow',
         4: 'bottomRightBlue'
     },
-    greenSound =  new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
-    redSound =  new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
-    yellowSound =  new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
-    blueSound =  new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+    greenSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
+    redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
+    yellowSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
+    blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 
 
 function onOffSwitch(element) {
@@ -45,7 +45,7 @@ function startButton(element) {
 
     element.target.style.background = 'linear-gradient(#A50000, red)';
 
-    setTimeout(function() {
+    setTimeout(function () {
         element.target.style.background = 'linear-gradient(red, #A50000)';
     }, 300);
 
@@ -57,15 +57,15 @@ function strictButton(element) {
 
     element.target.style.background = 'linear-gradient(#909000, yellow)';
 
-    setTimeout(function() {
+    setTimeout(function () {
         element.target.style.background = 'linear-gradient(yellow, #909000)';
     }, 300);
 
     if (switchedOn) {
-        if (strictMode){
+        if (strictMode) {
             document.getElementById('strictLed').style.background = 'linear-gradient(black, grey)';
             strictMode = false;
-        }else{
+        } else {
             document.getElementById('strictLed').style.background = 'linear-gradient(red, grey)';
             strictMode = true;
         }
@@ -84,7 +84,7 @@ function blinkTheCount(symbol) {
 
 }
 
-function lightThePad(element){
+function lightThePad(element) {
 
     var lightingTime = 700;
 
@@ -115,13 +115,13 @@ function lightThePad(element){
             break;
     }
 
-    var lightPadTimeout = setTimeout(function() {
+    var lightPadTimeout = setTimeout(function () {
         document.getElementById('topLeftGreen').style.backgroundColor = 'green';
         document.getElementById('topRightRed').style.backgroundColor = 'darkred';
         document.getElementById('bottomLeftYellow').style.backgroundColor = 'darkorange';
         document.getElementById('bottomRightBlue').style.backgroundColor = 'blue';
         clearTimeout(lightPadTimeout);
-    },lightingTime);
+    }, lightingTime);
 
     if (player) {
         playerTurns++;
@@ -156,7 +156,7 @@ function theGame(playerChoice, playerError) {
         // to light the pads in sequence with pause between
         var i = 0;
         theCount = (padsSequence.length < 10) ? count = '0' + padsSequence.length : count = padsSequence.length;
-        var lightPadInterval = setInterval(function(){
+        var lightPadInterval = setInterval(function () {
             if (i === padsSequence.length - 1) {
                 addListenerOnPads();
                 clearInterval(lightPadInterval);
@@ -186,7 +186,7 @@ function theGame(playerChoice, playerError) {
                 endGame();
                 blinkTheCount(whenGameEnds.toString());
                 alert("YOU WIN!!!");
-                var gameWon = setTimeout(function() {
+                var gameWon = setTimeout(function () {
                     restartGame();
                     clearTimeout(gameWon);
                 }, 5000);
@@ -214,7 +214,7 @@ function endGame() {
 
     padsSequence = [];
     playerTurns = 0;
-    playerChoice= null;
+    playerChoice = null;
     theCount = '';
 
 }
@@ -229,9 +229,9 @@ function restartGame() {
 function main() {
 
     // The Graphics
-    setTimeout(function() {
+    setTimeout(function () {
         document.getElementsByClassName('header')[0].style.opacity = '1';
-        setTimeout(function() {
+        setTimeout(function () {
             document.getElementById('headerBefore').id = 'headerTransition';
             document.getElementById('box').style.opacity = '1';
             document.getElementById('box').style.animation = 'rotateIt 3s';
