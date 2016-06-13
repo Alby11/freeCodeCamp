@@ -71,7 +71,7 @@ body {
     border-bottom-right-radius: 100%;
 }
 
-.simon{
+.simon {
     font-family: 'Roboto', verdana;
     font-size: 3vm;
     top: 5%;
@@ -214,9 +214,11 @@ h5 {
     .simon {
         font-size: 3vmax;
     }
+
     h5 {
         font-size: 1.2vmax;
     }
+
     .count {
         font-size: 5vmax;
     }
@@ -227,10 +229,12 @@ h5 {
         width: 95%;
         height: 40%;
     }
+
     .box .pad {
         width: 40%;
         height: 60%;
     }
+
     .settings {
         width: 20%;
         height: 70%;
@@ -242,17 +246,20 @@ h5 {
         left: 2%;
         height: 60%;
     }
+
     .box .pad {
         width: 45%;
         height: 45%;
     }
+
     .settings {
         width: 50%;
         height: 50%;
     }
 }
 
-/*box animation*/ @keyframes rotateIt {
+/*box animation*/
+@keyframes rotateIt {
     100% {
         transform: rotate(360deg);
         -webkit-transform: rotate(360deg);
@@ -261,7 +268,8 @@ h5 {
     }
 }
 
-/*canvases animation*/ @keyframes scaleInOut {
+/*canvases animation*/
+@keyframes scaleInOut {
     0% {
         transform: scale(0.1);
         -webkit-transform: scale(0.1);
@@ -283,4 +291,4 @@ h5 {
         -o-transform: scale(1);
     }
 }
- 
+
